@@ -24,9 +24,7 @@ class Home extends Component {
                 <div className="contentHolder">
                     <div>
                         <p>Placeholder text</p>
-                        <a href="#" onClick={this.executeScripts}>
-                            Start
-                        </a>
+                        <button onClick={this.executeScripts}>Start</button>
                     </div>
                 </div>
             </div>

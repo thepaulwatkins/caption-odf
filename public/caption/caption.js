@@ -1,3 +1,4 @@
+/*global chrome*/
 // Running function to collect text from inputs (textareas) and listen to changes as the user types
 function init() {
     var inputs = getInputs()
