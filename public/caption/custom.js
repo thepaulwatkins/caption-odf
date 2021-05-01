@@ -1,61 +1,55 @@
 /*global chrome*/
-// document.documentElement.innerHTML = document.documentElement.innerHTML.replace(
-//     /Flu/gi,
-//     '<mark class="calledout">Flu</mark>'
-// )
 
-//Wait for the page to load before running the function below
-window.addEventListener("load", replace);
-mouseListen();
+const replacementAndEducationalModal = `
+<span class="calledout">
+    <p class="replacement">Fam</p>
+    <div class="education-modal">
+        <p class="replaced-word-header">Replaced <strong class="actual-word-used">China Virus</strong> with COVID-19</p>
+        <i class="one-line-explainer">Calling COVID-19 the “Wuhan Virus” or “China Virus” is inaccurate and xenophobic</i>
+        <p class="deeper-explainer"><strong>DO:</strong> Talk about the new coronavirus disease (COVID-19)</p>
+        <p class="deeper-explainer"><strong>DO NOT:</strong> Attach locations or ethnicity to the disease; this is not a “Wuhan Virus,” “Chinese Virus,” or “Asian Virus.” The official name for the disease was deliberately chosen to avoid stigmatization.</p>
+        <p class="learn-more">Learn more <a class="learn-more-link" target="_blank" href="https://medicine.yale.edu/news-article/calling-covid-19-the-wuhan-virus-or-china-virus-is-inaccurate-and-xenophobic/">here</a></p>
+    </div>
+</span>`
 
-//Replacing the word "flu" separately by the tags h3,h1, and p the common text tags on Reddit. 
+//Replacing the word "flu" separately by the tags h3,h1, and p the common text tags on Reddit.
 //Could probably write a more efficient function to combine these three...
 function replace() {
-    var allHeaderThreeTags = document.getElementsByTagName("h3");
-    var innerHeaderThree;
+    console.time('replace')
+    var allHeaderThreeTags = document.getElementsByTagName('h3')
+    var innerHeaderThree
     for (var i = 0; i < allHeaderThreeTags.length; i++) {
-        innerHeaderThree = allHeaderThreeTags[i].innerHTML;
+        innerHeaderThree = allHeaderThreeTags[i].innerHTML
         innerHeaderThree = innerHeaderThree.replace(
-            /Flu/gi, 
-            '<mark class="calledout">Fam</mark>'
-        );
-        allHeaderThreeTags[i].innerHTML = innerHeaderThree;
+            /Flu/gi,
+            replacementAndEducationalModal
+        )
+        allHeaderThreeTags[i].innerHTML = innerHeaderThree
     }
 
-    var allHeaderOneTags = document.getElementsByTagName("h1");
-    var innerHeaderOne;
+    var allHeaderOneTags = document.getElementsByTagName('h1')
+    var innerHeaderOne
     for (var i = 0; i < allHeaderOneTags.length; i++) {
-        innerHeaderOne = allHeaderOneTags[i].innerHTML;
+        innerHeaderOne = allHeaderOneTags[i].innerHTML
         innerHeaderOne = innerHeaderOne.replace(
-            /Flu/gi, 
-            '<mark class="calledout">Fam</mark>'
-        );
-        allHeaderOneTags[i].innerHTML = innerHeaderOne;
+            /Flu/gi,
+            replacementAndEducationalModal
+        )
+        allHeaderOneTags[i].innerHTML = innerHeaderOne
     }
 
-    var allParagraphTags = document.getElementsByTagName("p");
-    var innerParagraph;
+    var allParagraphTags = document.getElementsByTagName('p')
+    var innerParagraph
     for (var i = 0; i < allParagraphTags.length; i++) {
-        innerParagraph = allParagraphTags[i].innerHTML;
+        innerParagraph = allParagraphTags[i].innerHTML
         innerParagraph = innerParagraph.replace(
-            /Flu/gi, 
-            '<mark class="calledout">Fam</mark>'
-        );
-        allParagraphTags[i].innerHTML = innerParagraph;
+            /Flu/gi,
+            replacementAndEducationalModal
+        )
+        allParagraphTags[i].innerHTML = innerParagraph
     }
+    console.timeEnd('replace')
 }
 
-//Obtaining the coordinates of the cursor and passing them to a function to find the altered element
-function mouseListen() {
-    document.addEventListener("mouseover", event => {
-        getChangedElement(event.clientX, event.clientY);
-    });
-}
-
-//Using the coordinates from mouseListen, find the changed elements (<mark class="calledout"...)
-function getChangedElement(x,y) {
-    var element = document.elementFromPoint(x, y);
-    if (element.className === "calledout") {
-        console.log('This word was replaced');
-    }
-}
+//Wait for the page to load before running the function below
+window.addEventListener('load', replace)

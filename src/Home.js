@@ -1,4 +1,3 @@
-/*global chrome*/
 import React, { Component } from 'react'
 import logo from './img/captioncatch.jpg'
 
@@ -7,10 +6,10 @@ class Home extends Component {
         return (
             <div>
                 <div className="header">
-                    <img className="logo" src={logo} />
+                    <img className="logo" src={logo} alt="caption catch" />
                     <p>
-                        Making content consuming more pleasant by removing bias and hateful 
-                        language from social media platforms
+                        Making content consuming more pleasant by removing bias
+                        and hateful language from social media platforms
                     </p>
                 </div>
             </div>

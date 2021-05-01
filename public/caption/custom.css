@@ -1,7 +1,59 @@
-.calledout {
-    background-color: #E6F5FA;
+.replacement {
+    background-color: #e6f5fa;
+    transition: all 0.4s;
+    position: relative;
+    opacity: 0.96;
 }
 
-body {
-    border: 4px solid green !important;
+.replacement:hover {
+    opacity: 0.7;
+}
+
+.education-modal {
+    opacity: 0;
+    width: 400px;
+    position: absolute;
+    background-color: #f8f8f8;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    transition: all 0.3s;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.calledout {
+    display: inline-block;
+}
+
+.calledout:hover .education-modal {
+    opacity: 0.96;
+}
+
+.education-modal strong {
+    font-weight: 500;
+}
+
+.replaced-word-header {
+    font-size: 14px;
+}
+
+.deeper-explainer {
+    font-size: 12px;
+}
+
+.one-line-explainer {
+    font-size: 12px;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+
+.learn-more {
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.learn-more-link {
+    color: blue;
 }
