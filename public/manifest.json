@@ -1,15 +1,24 @@
 {
-  "name": "Caption-ODF",
-  "version": "1.0.0",
-  "manifest_version": 2,
-  "description": "Tracking bias in captions",
-  "icons": {
-    "512": "logo512.png"
-  },
-  "permissions": ["activeTab", "tabs"],
-  "browser_action": {
-    "default_icon":
-    "logo512.png",
-    "default_popup": "popup.html"
-  }
+    "name": "Caption-ODF",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "Tracking bias in captions",
+    "icons": {
+        "512": "logo512.png"
+    },
+    "permissions": ["activeTab", "tabs"],
+    "browser_action": {
+        "default_icon": "logo512.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["caption/background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*/*"],
+            "js": ["caption/custom.js"],
+            "css": ["caption/custom.css"]
+        }
+    ]
 }

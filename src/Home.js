@@ -1,18 +1,17 @@
 /*global chrome*/
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Home extends Component {
-
     executeScripts = () => {
         chrome.tabs.executeScript({
-            file: 'jquery.js'
-        });    
+            file: 'jquery.js',
+        })
 
-        chrome.tabs.executeScript({}, function() {
+        chrome.tabs.executeScript({}, function () {
             chrome.tabs.executeScript({
-                file: 'caption/caption.js'
-            });
-        });
+                file: 'caption/caption.js',
+            })
+        })
     }
 
     render() {
@@ -25,12 +24,12 @@ class Home extends Component {
                 <div className="contentHolder">
                     <div>
                         <p>Placeholder text</p>
-                        <a href="#" onClick={this.executeScripts}>Start</a>
+                        <button onClick={this.executeScripts}>Start</button>
                     </div>
                 </div>
             </div>
         )
     }
-};
+}
 
-export default Home;
+export default Home
