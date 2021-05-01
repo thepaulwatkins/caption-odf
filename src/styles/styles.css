@@ -7,6 +7,12 @@ html {
     height: 50px;
     margin: 0px;
     padding: 12px 0px;
+    justify-content: center;
+}
+
+.logo {
+    width: 240px;
+    height: 135px;
 }
 
 h1 {
@@ -18,13 +24,8 @@ h1 {
 }
 
 p {
-    margin: 0px 4px;
+    margin: 0px 4px 4px 0px;
     font-family: sans-serif;
     font-weight: 400;
     font-size: 14px;
-}
-
-.contentHolder {
-    width: 280px;
-    height: 150px;
 }
