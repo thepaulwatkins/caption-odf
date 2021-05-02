@@ -30,13 +30,7 @@ const replacementAndEducationalModal = `
     </div>
 </span>`
 
-let runBefore = false
-
 function replace() {
-    if (runBefore) {
-        return
-    }
-    runBefore = true
     console.time('replace')
     const allTags = [
         ...document.getElementsByTagName('h3'),
@@ -59,10 +53,12 @@ function replace() {
     console.timeEnd('replace')
 }
 
-if (document.readyState == 'loading') {
-    // still loading, wait for the event
-    document.addEventListener('DOMContentLoaded', replace)
-} else {
-    // DOM is ready!
+if (document.readyState == 'complete') {
+    console.log(document.readyState, 'at the beginning')
     replace()
 }
+
+document.addEventListener('readystatechange', () => {
+    console.log(document.readyState)
+    if (document.readyState == 'complete') replace()
+})
