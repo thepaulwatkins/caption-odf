@@ -1,8 +1,8 @@
 {
     "name": "Caption Catch",
-    "version": "1.0.0",
+    "version": "0.0.0.1",
     "manifest_version": 2,
-    "description": "Tracking bias in captions",
+    "description": "Creating a more culturally-sensitive online experience.",
     "icons": {
         "512": "logo512.png"
     },
