@@ -63,4 +63,6 @@ function replace() {
 window.addEventListener('load', replace)
 
 // ...or just get it to run after a short amount of time
-setTimeout(replace, 1000)
+setTimeout(replace, 5000)
+
+console.log('about to run!')

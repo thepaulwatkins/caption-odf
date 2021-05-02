@@ -16,7 +16,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://reddit.com/*"],
+            "matches": ["https://*/*"],
             "js": ["caption/custom.js"],
             "css": ["caption/custom.css"]
         }

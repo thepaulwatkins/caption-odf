@@ -1,3 +1,4 @@
+/*global chrome*/
 import React, { Component } from 'react'
 import logo from './img/captioncatch.jpg'
 
