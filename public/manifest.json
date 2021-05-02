@@ -1,5 +1,5 @@
 {
-    "name": "Caption-ODF",
+    "name": "Caption Catch",
     "version": "1.0.0",
     "manifest_version": 2,
     "description": "Tracking bias in captions",
@@ -16,13 +16,9 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://*/*"],
+            "matches": ["https://reddit.com/*"],
             "js": ["caption/custom.js"],
             "css": ["caption/custom.css"]
-        },
-        {
-            "matches": ["https://*/*"],
-            "js": ["caption/caption.js"]
         }
     ]
 }

@@ -11,16 +11,36 @@
 
 .education-modal {
     opacity: 0;
-    width: 400px;
+    width: 140px;
     position: absolute;
-    background-color: #f8f8f8;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: rgb(90 80 162 / 50%) 3px 3px 9px 1px;
     z-index: 99999;
-    transition: all 0.3s;
-    padding: 10px;
+    transition: width 0.3s ease-in, opacity 0.5s;
+    padding: 10px 15px;
     font-weight: 400;
     font-size: 12px;
-    border-radius: 8px;
+    border-radius: 12px;
+}
+
+.education-modal-starter {
+    display: flex;
+    flex-direction: column;
+}
+
+.learn-more-prompt {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.learn-more-prompt img {
+    object-fit: contain;
+}
+
+#down-arrow-show-more {
+    color: grey;
+    cursor: pointer;
 }
 
 .calledout {
@@ -35,8 +55,8 @@
     font-weight: 500;
 }
 
-.replaced-word-header {
-    font-size: 14px;
+.actual-word-used {
+    font-size: 16px;
 }
 
 .deeper-explainer {
@@ -44,16 +64,22 @@
 }
 
 .one-line-explainer {
-    font-size: 12px;
-    font-style: italic;
-    padding-bottom: 20px;
+    font-size: 14px;
+    padding-bottom: 5px;
 }
 
 .learn-more {
     padding-top: 10px;
     font-size: 12px;
+    font-style: italic;
+    text-align: right;
+}
+
+.learn-more-clicked {
+    padding-top: 15px;
 }
 
 .learn-more-link {
-    color: blue;
+    color: #0079d3;
+    text-decoration: underline;
 }
