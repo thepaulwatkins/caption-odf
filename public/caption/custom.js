@@ -53,12 +53,9 @@ function replace() {
     console.timeEnd('replace')
 }
 
-if (document.readyState == 'complete') {
-    console.log(document.readyState, 'at the beginning')
-    replace()
-}
+replace()
 
 document.addEventListener('readystatechange', () => {
     console.log(document.readyState)
-    if (document.readyState == 'complete') replace()
+    replace()
 })
