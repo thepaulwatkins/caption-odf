@@ -59,10 +59,10 @@ function replace() {
     console.timeEnd('replace')
 }
 
-//Wait for the page to load before running the function below
-window.addEventListener('load', replace)
-
-// ...or just get it to run after a short amount of time
-setTimeout(replace, 5000)
-
-console.log('about to run!')
+if (document.readyState == 'loading') {
+    // still loading, wait for the event
+    document.addEventListener('DOMContentLoaded', replace)
+} else {
+    // DOM is ready!
+    replace()
+}
