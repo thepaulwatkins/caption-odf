@@ -14,6 +14,7 @@
     width: 140px;
     position: absolute;
     background-color: white;
+    color: #1c1c1c;
     box-shadow: rgb(90 80 162 / 50%) 3px 3px 9px 1px;
     z-index: 99999;
     transition: width 0.3s ease-in, opacity 0.5s;
